@@ -1,0 +1,127 @@
+Visual Crossing Icon Possible Values
+  snow
+  snow-showers-day
+  snow-showers-night
+  thunder-rain
+  thunder-showers-day
+  thunder-showers-night
+  rain
+  showers-day
+  showers-night
+  fog
+  wind
+  cloudy
+  partly-cloudy-day
+  partly-cloudy-night
+  clear-day
+  clear-night
+
+
+Visual Crossing JSON Preview
+{
+  "queryCost": 1,
+  "latitude": 31.769105,
+  "longitude": -94.18997,
+  "resolvedAddress": "75935, USA",
+  "address": "75935",
+  "timezone": "America/Chicago",
+  "tzoffset": -6,
+  "days": [
+    {
+      "datetime": "2026-02-06",
+      "datetimeEpoch": 1770357600,
+      "tempmax": 76.9,
+      "tempmin": 39.2,
+      "temp": 57.8,
+      "feelslikemax": 76.9,
+      "feelslikemin": 37.2,
+      "feelslike": 57.2,
+      "dew": 38.4,
+      "humidity": 50.2,
+      "precip": 0,
+      "precipprob": 0,
+      "precipcover": 0,
+      "preciptype": null,
+      "snow": 0,
+      "snowdepth": 0,
+      "windgust": 13.9,
+      "windspeed": 5.8,
+      "winddir": 268.8,
+      "pressure": 1019.6,
+      "cloudcover": 1.6,
+      "visibility": 10,
+      "solarradiation": 194.2,
+      "solarenergy": 16.8,
+      "uvindex": 7,
+      "severerisk": 10,
+      "sunrise": "07:06:23",
+      "sunriseEpoch": 1770383183,
+      "sunset": "17:55:50",
+      "sunsetEpoch": 1770422150,
+      "moonphase": 0.65,
+      "conditions": "Clear",
+      "description": "Clear conditions throughout the day.",
+      "icon": "clear-day",
+      "stations": [
+        "KF17",
+        "KLFK",
+        "KRFI",
+        "KOCH",
+        "DRKT2"
+      ],
+      "source": "comb"
+    }
+  ],
+  "stations": {
+    "KRFI": {
+      "distance": 74773,
+      "latitude": 32.14,
+      "longitude": -94.85,
+      "useCount": 0,
+      "id": "KRFI",
+      "name": "KRFI",
+      "quality": 99,
+      "contribution": 0
+    },
+    "KF17": {
+      "distance": 7348,
+      "latitude": 31.83,
+      "longitude": -94.16,
+      "useCount": 0,
+      "id": "KF17",
+      "name": "CENTER MUNIC AIRP, TX US TG",
+      "quality": 99,
+      "contribution": 0
+    },
+    "KOCH": {
+      "distance": 54448,
+      "latitude": 31.58,
+      "longitude": -94.72,
+      "useCount": 0,
+      "id": "KOCH",
+      "name": "NACOGDOCHES, TX",
+      "quality": 99,
+      "contribution": 0
+    },
+    "KLFK": {
+      "distance": 80169,
+      "latitude": 31.23,
+      "longitude": -94.75,
+      "useCount": 0,
+      "id": "KLFK",
+      "name": "KLFK",
+      "quality": 100,
+      "contribution": 0
+    },
+    "DRKT2": {
+      "distance": 18338,
+      "latitude": 31.803,
+      "longitude": -94,
+      "useCount": 0,
+      "id": "DRKT2",
+      "name": "SABINE NORTH 2 TX US",
+      "quality": 0,
+      "contribution": 0
+    }
+  }
+}

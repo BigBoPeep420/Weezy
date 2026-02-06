@@ -1,5 +1,6 @@
 import path from "node:path";
 import HtmlWebpackPlugin from "html-webpack-plugin";
+import DotenvWebpackPlugin from "dotenv-webpack";
 
 export default {
   entry: "./src/index.js",
@@ -17,6 +18,7 @@ export default {
     new HtmlWebpackPlugin({
       template: "./src/template.html",
     }),
+    new DotenvWebpackPlugin(),
   ],
   module: {
     rules: [
