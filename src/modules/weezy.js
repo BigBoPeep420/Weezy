@@ -103,6 +103,7 @@ async function Weezy() {
       },
     },
   };
+  const callbacks = { onsearchfailure: [] };
 
   const getInitialLocation = async () => {
     try {
@@ -126,7 +127,9 @@ async function Weezy() {
       return { timeFetched, ...fetchedData };
     } catch (error) {
       console.error("Fetch Error: ", error);
-      return { timeFetched, ...fallbackData };
+      callCallbacks("onsearchfailure");
+      if (data) return { ...data, timeFetched };
+      else return { timeFetched, ...fallbackData };
     }
   };
 
@@ -145,13 +148,36 @@ async function Weezy() {
   //#endregion
 
   async function getWeather(location) {
-    if (data.resolvedAddress === location) return data;
+    if (!location || data.resolvedAddress === location || location.length > 100)
+      return data;
     data = await fetchData(location);
     localStorage.setItem("weatherData", JSON.stringify(data));
     return data;
   }
 
-  return { getWeather };
+  function callCallbacks(eventName, ...args) {
+    if (eventName in callbacks)
+      callbacks[eventName].forEach((fn) => fn(...args));
+  }
+  function registerCallback(eventName, fn) {
+    if (eventName in callbacks) {
+      const dupes = callbacks[eventName].filter((func) => func === fn);
+      if (dupes.length < 1) callbacks[eventName].push(fn);
+    }
+  }
+  function removeCallback(eventName, fn) {
+    if (eventName in callbacks) {
+      const index = callbacks[eventName].indexOf(fn);
+      if (index >= 0) callbacks[eventName].splice(index, 1);
+    }
+  }
+
+  return {
+    initialData: { ...data },
+    getWeather,
+    registerCallback,
+    removeCallback,
+  };
 }
 
 export { Weezy };
